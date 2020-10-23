@@ -1,6 +1,5 @@
 package com.ex2.domain;
 
-import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
@@ -19,11 +18,11 @@ public class Customer {
 	@Id
 	@GeneratedValue
 	private Integer id;
-
-	@Column(nullable = false)
 	private String firstName;
-
-	@Column(nullable = false)
 	private String lastName;
+
+//	@ManyToOne(fetch = FetchType.LAZY)
+//	@JoinColumn(nullable = true, name="username")
+//	private User user;
 
 }
