@@ -10,6 +10,7 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import com.ex2.domain.Customer;
+import com.ex2.domain.User;
 import com.ex2.repository.CustomerRepository;
 
 @Service
@@ -19,11 +20,13 @@ public class CustomerService {
 	@Autowired
 	CustomerRepository customerRepository;
 
-	public Customer create(Customer customer){
+	public Customer create(Customer customer, User user){
+		customer.setUser(user);
 		return customerRepository.save(customer);
 	}
 
-	public Customer update(Customer customer){
+	public Customer update(Customer customer, User user){
+		customer.setUser(user);
 		return customerRepository.save(customer);
 	}
 
