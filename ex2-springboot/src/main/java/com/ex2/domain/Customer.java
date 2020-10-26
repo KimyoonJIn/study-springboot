@@ -1,8 +1,11 @@
 package com.ex2.domain;
 
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 import lombok.AllArgsConstructor;
@@ -21,8 +24,8 @@ public class Customer {
 	private String firstName;
 	private String lastName;
 
-//	@ManyToOne(fetch = FetchType.LAZY)
-//	@JoinColumn(nullable = true, name="username")
-//	private User user;
+	@ManyToOne(fetch = FetchType.LAZY)
+	@JoinColumn(nullable = true, name="username")
+	private User user;
 
 }
