@@ -36,7 +36,7 @@ public class CustomerController {
 	String list(Model model){
 		List<Customer> customers = customerService.findAll();
 		model.addAttribute("customers", customers);
-		return "/customers/list";
+		return "customers/list";
 	}
 
 	@PostMapping(path = "create")
@@ -55,7 +55,7 @@ public class CustomerController {
 	String editForm(@RequestParam Integer id, CustomerForm form) {
 		Customer customer = customerService.findOne(id);
 		BeanUtils.copyProperties(customer, form);
-		return "/customers/edit";
+		return "customers/edit";
 	}
 
 	@PostMapping(path = "edit")
